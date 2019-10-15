@@ -29,54 +29,66 @@ const allowedOrigins = [
 let answerData=[
     {
         "id":1,
-        "answer":"dsd"
+        "answer":"Leo Tolstoy"
     },
     {
         "id":2,
-        "answer":"sdfs"
+        "answer":"Gennie"
     },
     {
         "id":3,
-        "answer":"sdfs"
+        "answer":"Windows"
     },
     {
         "id":4,
-        "answer":"sdfs"
+        "answer":"wreslting"
+    },
+    {
+        "id":5,
+        "answer":"sam manekshaw"
     }
 ];
 
 let Data = [
     {
         "id":1,
-        "question": "Sample question?",
-        "option1":"dsd",
-        "option2":"sdsd",
-        "option3":"ssd",
-        "option4":"kjsd"
+        "question": "Who is the author of 'war and peace'?",
+        "option1":"W Shakespeare",
+        "option2":"Charles Dickens",
+        "option3":"Leo Tolstoy",
+        "option4":"Sakshi Shalini"
     },
     {
         "id":2,
-        "question": "affs",
-        "option1":"dsd",
-        "option2":"sdsd",
-        "option3":"ssd",
-        "option4":"kjsd"
+        "question": "Harry Potter ends up marrying?",
+        "option1":"hermione",
+        "option2":"Ron",
+        "option3":"Gennie",
+        "option4":"Snape"
     },
     {
         "id":3,
-        "question": "affs",
-        "option1":"dsd",
-        "option2":"sdsd",
-        "option3":"ssd",
-        "option4":"kjsd"
+        "question": "Which of these is a operating system?",
+        "option1":"Doors",
+        "option2":"Portico",
+        "option3":"Gates",
+        "option4":"Windows"
     },
     {
         "id":4,
-        "question": "affs",
-        "option1":"dsd",
-        "option2":"sdsd",
-        "option3":"ssd",
-        "option4":"kjsd"
+        "question": "which game is played in indra gandhi complex?",
+        "option1":"cricket",
+        "option2":"football",
+        "option3":"wreslting",
+        "option4":"boxing"
+    },
+    {
+        "id":5,
+        "question": "first field marshal india?",
+        "option1":"sam manekshaw",
+        "option2":"k m cariappa",
+        "option3":"pv naik",
+        "option4":"v k singh"
     }
 ];
 
