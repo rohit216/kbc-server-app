@@ -1,9 +1,9 @@
 
 let express = require('express');
-let cors =require("cors");
+
 let app = express();
-const Port = 3000;
 let result =0;
+const port = process.env.PORT || 3000;
 
 app.use(function(req, res, next) {
     if (req.headers.origin) {
@@ -95,4 +95,4 @@ app.get('/checkAnswer',(req,res)=>{
     }
 });
 
-app.listen(Port,()=>console.log(`Server listening on port ${Port}`));
+app.listen(port,()=>console.log(`Server listening on port ${port}`));
