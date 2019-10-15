@@ -1,19 +1,30 @@
 
 let express = require('express');
+let cors = require('cors');
 
 let app = express();
 let result =0;
 const port = process.env.PORT || 3000;
 
-app.use(function(req, res, next) {
-    if (req.headers.origin) {
-        res.header('Access-Control-Allow-Origin', '*')
-        res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Authorization')
-        res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE')
-        if (req.method === 'OPTIONS') return res.send(200)
+const allowedOrigins = [
+    'capacitor://localhost',
+    'ionic://localhost',
+    'http://localhost',
+    'http://localhost:8080',
+    'http://localhost:8100',
+    'https://kbc-quiz.herokuapp.com/'
+  ];
+  const corsOptions = {
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Origin not allowed by CORS'));
+      }
     }
-    next()
-});
+  }
+
+  app.options('*', cors(corsOptions));
 
 let answerData=[
     {
@@ -69,9 +80,9 @@ let Data = [
     }
 ];
 
-app.get('/',(req,res)=>res.send("Server is running!!!"));
+app.get('/', cors(corsOptions),(req,res)=>res.send("Server is running!!!"));
 
-app.get('/loadQuestions',(req,res)=>{
+app.get('/loadQuestions',cors(corsOptions),(req,res)=>{
     let id = req.query.id;
     if(req.query.id>Data.length){
         res.send("No question found here")
@@ -80,7 +91,7 @@ app.get('/loadQuestions',(req,res)=>{
     }
 });
 
-app.get('/checkAnswer',(req,res)=>{
+app.get('/checkAnswer',cors(corsOptions),(req,res)=>{
     let id = req.query.id;
     var ans = req.query.option;
     var actualAnswer = answerData[id-1].answer.toString();
