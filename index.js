@@ -98,7 +98,7 @@ app.get('/', cors(corsOptions),(req,res)=>res.send("Server is running!!!"));
 app.get('/loadQuestions',cors(corsOptions),(req,res)=>{
     let id = req.query.id;
     if(req.query.id>Data.length){
-        res.send("No question found here")
+        res.json({"testEnded":true})
     }else{
         res.send(Data[id-1]);
     }
