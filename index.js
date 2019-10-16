@@ -3,7 +3,6 @@ let express = require('express');
 let cors = require('cors');
 
 let app = express();
-let result =0;
 const port = process.env.PORT || 3000;
 
 const allowedOrigins = [
@@ -110,13 +109,9 @@ app.get('/checkAnswer',cors(corsOptions),(req,res)=>{
     var ans = req.query.option;
     var actualAnswer = answerData[id-1].answer.toString();
     if(ans==actualAnswer){
-        result = result+2;
-        res.json({"response":true,
-                "result" : result});
+        res.json({"response":true});
     }else{ 
-        result = result-2;
-        res.json({"response":false,
-                    "result":result});
+        res.json({"response":false});
     }
 });
 
