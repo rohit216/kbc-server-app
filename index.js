@@ -14,6 +14,8 @@ const allowedOrigins = [
     'http://localhost:8101',
     'http://localhost:*',
     'http://192.168.1.126:8100',
+    'http://192.168.1.109:8101',
+    'KbcApplication@8101',
     'https://kbc-quiz.herokuapp.com/'
   ];
   const corsOptions = {
