@@ -50,6 +50,26 @@ let answerData=[
     {
         "id":5,
         "answer":"sam manekshaw"
+    },
+    {
+        "id":6,
+        "answer":"Sep 8"
+    },
+    {
+        "id":7,
+        "answer":"Malayalam"
+    },
+    {
+        "id":8,
+        "answer":"Oct 14"
+    },
+    {
+        "id":9,
+        "answer":"Orissa"
+    },
+    {
+        "id":10,
+        "answer":"Madurai"
     }
 ];
 
@@ -88,11 +108,54 @@ let Data = [
     },
     {
         "id":5,
-        "question": "first field marshal india?",
+        "question": "First field marshal india?",
         "option1":"sam manekshaw",
         "option2":"k m cariappa",
         "option3":"pv naik",
         "option4":"v k singh"
+    },
+    {
+        "id":6,
+        "question": "The International Literacy Day is observed on?",
+        "option1":"Sep 8",
+        "option2":"Nov 28",
+        "option3":"May 2",
+        "option4":"Sep 22"
+    },
+    {
+        "id":7,
+        "question": "The language of Lakshadweep. a Union Territory of India, is?",
+        "option1":"Tamil",
+        "option2":"Hindi",
+        "option3":"Malayalam",
+        "option4":"Telugu"
+    },
+    {
+        
+        "id":8,
+        "question": "Which day is observed as the World Standards  Day?",
+        "option1":"June 26",
+        "option2":"Oct 14",
+        "option3":"Nov 15",
+        "option4":"Dec 2"
+    },
+    {
+        
+        "id":9,
+        "question": "The festival of Nabanna is celebrated predominatly in?",
+        "option1":"Andhra Pradesh",
+        "option2":"Rajasthan",
+        "option3":"Karnataka",
+        "option4":"Orissa"
+    },
+    {
+        
+        "id":10,
+        "question": "Meenakshi Temple is in?",
+        "option1":"Puri",
+        "option2":"Trivandrum",
+        "option3":"Chennai",
+        "option4":"Madurai"
     }
 ];
 
@@ -112,9 +175,11 @@ app.get('/checkAnswer',cors(corsOptions),(req,res)=>{
     var ans = req.query.option;
     var actualAnswer = answerData[id-1].answer.toString();
     if(ans==actualAnswer){
-        res.json({"response":true});
+        res.json({"response":true,
+                "answer":actualAnswer});
     }else{ 
-        res.json({"response":false});
+        res.json({"response":false,
+                    "answer":actualAnswer});
     }
 });
 
