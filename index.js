@@ -15,7 +15,7 @@ const allowedOrigins = [
     'http://localhost:*',
     'http://192.168.1.126:8100',
     'http://192.168.1.109:8101',
-    'http://192.168.1.109:*',
+    'http://192.168.1.109:8100',
     'KbcApplication@8101',
     'https://kbc-quiz.herokuapp.com/'
   ];
